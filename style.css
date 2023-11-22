@@ -1,0 +1,159 @@
+@import "https://fonts.googleapis.com/css?family=Roboto";
+@import "https://fonts.googleapis.com/css?family=Poppins";
+@import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css";
+@import "https://cdnjs.cloudflare.com/ajax/libs/Iosevka/6.0.0/iosevka/iosevka.min.css";
+
+::-webkit-scrollbar {
+    width: 0rem;
+}
+
+body[data-theme="dark"] {
+    --bg: #0f0f0f;
+    --bg2: #171717;
+    --fg: #fafafa;
+}
+
+body[data-theme="light"] {
+    --bg: #fefefe;
+    --bg2: #dfdfdf;
+    --fg: #404040;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--fg);
+}
+
+.content {
+    position: absolute;
+    /*top: 50%;*/
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, 5%);
+    font-family: Poppins,Roboto,sans-serif;
+    color: var(--fg);
+    width: 34%;
+}
+
+.post {
+    width: 55%;
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  [class="content"] {
+    width: 53%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  [class="post"] {
+    width: 100%;
+  }
+}
+
+.content p {
+    font-family: Roboto,sans-serif;
+    line-height: 1.7rem;
+}
+
+.content a {
+    color: var(--fg);
+    line-height: 2rem;
+    text-decoration: none;
+}
+.content a:hover {
+    text-decoration: underline;
+    /*text-decoration-style: dashed;*/
+    text-underline-offset: 5px;
+}
+
+.content header {
+    font-size: 1.5rem;
+    margin-left: 0.5rem;
+    position: relative;
+}
+
+.sushi {
+    background: linear-gradient(270deg, #ff00d4, #fcee21);
+    background-size: 600% 600%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation: Animation 1s linear infinite alternate;
+}
+
+@keyframes Animation { 
+    0% {
+        background-position:top;
+    }
+    100% {
+        background-position:bottom;
+    }
+}
+
+.pron {
+    position: absolute;
+    bottom: -60%;
+}
+
+.sep {
+    height: 2px;
+    width: 10rem;
+    background-color: #191919;
+}
+
+.theme-switcher {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+}
+
+input {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+
+input:checked + label {
+    background-color: var(--fg);
+}
+
+input:checked + label::after {
+    background-color: var(--bg);
+    left: 60%;
+}
+
+label {
+    display: block;
+    -webkit-text-fill-color: transparent;
+    height: 30px;
+    width: 60px;
+    background-color: var(--fg);
+    border-radius: 50rem;
+    position: relative;
+    cursor: pointer;
+    transition: .5s ease-in-out;
+}
+
+label::after {
+    position: absolute;
+    content: '';
+    width: 20px;
+    height: 20px;
+    border-radius: 50rem;
+    background-color: var(--bg);
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    transition: .5s ease-in-out;
+}
+
+.code {
+    background-color: var(--bg2);
+    padding: 10px;
+}
+
+code {
+    font-family: 'Iosevka Web',monospace;
+}
